@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+html, body {
+    overflow: auto;
+    scrollbar-width: none;           
+    -ms-overflow-style: none;        
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+  
+  
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
+body{
+  background-color: #18181b; 
+  color: #fafafa;            
+  height: 200vh; 
+}
+.navbar {
+  position: absolute;
+  top: 100%;
+  margin-top: 0.5rem;
+  right: 0;
+  min-width: 10rem;
+  padding: 0.5rem;
+  background-color: rgba(250, 250, 250, 0.1);
+  border-radius: 1rem;
+  box-shadow: inset 0 0 0 1px rgba(250, 250, 250, 0.05);
+  transform: scale(0.9);
+  isolation: isolate;
+  filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition-property: opacity, transform, filter;
+  backdrop-filter: blur(40px);
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    position: static;
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    opacity: 1;
+    filter: blur(0);
+    visibility: visible;
+    transform: scale(1);
+  }
+}  
+.navbar.active {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+  visibility: visible;
+}
+.nav-link {
+  display: grid;
+  align-items: center;
+  height: 2.25rem; 
+  padding-left: 1rem; 
+  padding-right: 1rem; 
+  font-size: 0.875rem; 
+  font-weight: 500; 
+  letter-spacing: 0.05em; 
+  color: rgba(161, 161, 170, 0.87); 
+  transition-property: color; 
+}
+.nav-link:hover {
+  color: rgba(250, 250, 250, 1); 
+}
+.nav-link.active {
+  color: rgb(0,0,0); 
+  transition-duration: 500ms;
+}
+.navbar .active-box {
+  position: absolute;
+  background-color: rgb(231, 225, 225); 
+  border-radius: 0.5rem; 
+  z-index: -10; 
+  transition-property: top, left;
+  transition-duration: 500ms; 
+} 
+@media (min-width: 768px) {
+  .nav-link[href="#contact"] {
+    display: none !important;
+  }
+}
+.headline-1{
+  max-width: max-content;
+  background: -webkit-linear-gradient(0deg, #fafafa, #a1a1aa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.headline-2{
+  max-width: max-content;
+  background: -webkit-linear-gradient(0deg, #fafafa, #a1a1aa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.person-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.btn .material-symbols-rounded{
+  font-size: 24px;
+  cursor: pointer;
+}
+.btn:has( .material-symbols-rounded){
+  padding-right: 5px;
+  padding-left: 10px;
+}
+.btn{
+  height: 2.75rem; 
+  background-color: #38bdf8;
+  color: #3f3f46; 
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 8px;
+
+}
+.btn:hover {
+  background-color: #67d4f7; 
+}
+
+.btn:active {
+  background-color: #38bdf8; 
+}
+
+.btn-outline {
+  height: 2.75rem; 
+  background-color: transparent; 
+  color: #ffffff; 
+  border: 1px solid #ffffff; 
+  border-radius: 7px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.btn-outline:hover {
+  background-color: #e2d9d9; 
+  color: #27272a; 
+}
+
+.btn-outline:active {
+  background-color: #e5e5e5; 
+  color: #27272a; 
+}
+
+.experience-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.timeline {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
+}
+
+.timeline_item {
+  position: relative;
+  padding-left: 3.125rem;
+  padding-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.timeline_item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.timeline_item::before{
+  content: '';
+  width: 1px;
+  height: 100%;
+  background-color: #38bdf8;
+  position: absolute;
+  left: .25rem;
+  top: 0;
+}
+
+.timeline .fa-briefcase,
+.timeline .fa-graduation-cap {
+  position: absolute;
+  left: -0.4375rem;
+  top: 0;
+  font-size: 18px;
+  color: #38bdf8;
+}
+
+.timeline .fa-briefcase{
+  left: -0.2900rem;
+}
+.heading{
+  background: -webkit-linear-gradient(0deg, #fafafa, #a1a1aa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.github-icon {
+  background-color: white;
+}
+github-btn .material-symbols-rounded {
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.github-btn .material-symbols-rounded::before {
+  content: '' !important;
+}
+
+.btn-outline img {
+  filter: invert(1);
+  transition: filter 0.2s ease-in-out;
+}
+
+.btn-outline:hover img {
+  filter: invert(0);
+}
